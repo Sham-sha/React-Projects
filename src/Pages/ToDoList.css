@@ -1,57 +1,139 @@
+/* Reset default styles */
+
 .container {
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
-  }
-
-.container ul li{
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 20px 0px;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
 }
 
-.container ul li button{
-  background-color: red;
+h1 {
+  color: #000000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.inputDiv {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.inputbox {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 9999px 0 0 9999px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.inputbox:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.submitBtn {
+  background-color: #8b5cf6;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 9999px 9999px 0;
   border: 0px;
-  padding: 5px;
-  margin: 0px 10px;
-  color: azure;
-  font-size: 15px;
-  border-radius: 5px;
-  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
 
-.container ul li button:hover{
-  background-color: rgb(207, 7, 7);
+.submitBtn:hover {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
 }
 
-.inputDiv{
-  display:flex ;
-}
-.inputbox{
-  padding: 10px;
-  width: 300px;
-  border-radius: 30px 0px 0px 30px;
-  border: 1px solid #c2c2c2;
+.list ul {
+  padding: 0;
 }
 
-.submitBtn{
-  background-color: blueviolet;
-  color: aliceblue;
-  font-weight: 600px;
-  padding: 10px;
-  width: 100px;
-  border-radius: 0px 30px 30px 0px;
-  border: 1px solid #c2c2c2;
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  gap: 1rem;
 }
 
+.item:hover {
+  transform: translateY(-2px);
+}
 
-.item{
-  align-items: center;
-  max-width: 300px;
-  background-color: #e9e9e97c;
-  padding: 15px;
+.item label {
+  font-size: 1.1rem;
+  color: #000000;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
+}
 
+.btn {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.editBtn, .deleteBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 0px ;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.editBtn {
+  background-color: #10b981;
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: #059669;
+}
+
+.deleteBtn {
+  background-color: #ef4444;
+  color: white;
+  position: static;
+}
+
+.deleteBtn:hover {
+  background-color: #dc2626;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .inputbox, .submitBtn {
+    padding: 0.625rem 1rem;
+  }
+  
+  .item {
+    padding: 0.875rem 1rem;
+  }
+  
+  .btn {
+    gap: 0.5rem;
+  }
 }

@@ -30,7 +30,7 @@ function ToDoList() {
   };
 
   let handleAddOrSaveItems = () => {
-    if (newItem.trim() === "") return; 
+    if (newItem.trim() === "") return;
     if (isEditing) {
       let newListItem = items.map((item) => {
         return item.id === currentElementId
@@ -66,33 +66,37 @@ function ToDoList() {
           {isEditing ? "Save" : "Add"}
         </button>
       </div>
+      <div className="list">
+        <ul>
+          {items.map((item) => {
+            return (
+              <li key={item.id} className="item">
+                <label htmlFor="">{item.label}</label>
 
-      <ul>
-        {items.map((item) => {
-          return (
-            <li key={item.id} className="item">
-              <label htmlFor="">{item.label}</label>
-              <button
-                className="deleteBtn"
-                tabIndex={0}
-                onClick={() => {
-                  handleDelete(item.id);
-                  console.log(item.id);
-                }}
-              >
-                Delete
-              </button>
-              <button
-                className="editBtn"
-                tabIndex={0}
-                onClick={() => handleEdit(item.id)}
-              >
-                Edit
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+                <div className="btn">
+                  <button
+                    className="editBtn"
+                    tabIndex={0}
+                    onClick={() => handleEdit(item.id)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="deleteBtn"
+                    tabIndex={0}
+                    onClick={() => {
+                      handleDelete(item.id);
+                      console.log(item.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

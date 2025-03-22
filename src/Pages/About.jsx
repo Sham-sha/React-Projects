@@ -1,11 +1,12 @@
 import React from "react";
-import "./style.css"
-
+import Login from "../components/Login";
+import Dashboard from "../components/Dashboard";
 
 function About() {
   return (
-    <div className="container">
-      <h1>About</h1>
+    <div>
+      <Login />
+      <Dashboard />
     </div>
   );
 }
